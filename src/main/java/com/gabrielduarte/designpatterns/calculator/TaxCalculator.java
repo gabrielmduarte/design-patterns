@@ -1,7 +1,7 @@
 package com.gabrielduarte.designpatterns.calculator;
 
 import com.gabrielduarte.designpatterns.domain.Budget;
-import com.gabrielduarte.designpatterns.domain.Tax;
+import com.gabrielduarte.designpatterns.domain.tax.Tax;
 
 import java.math.BigDecimal;
 
