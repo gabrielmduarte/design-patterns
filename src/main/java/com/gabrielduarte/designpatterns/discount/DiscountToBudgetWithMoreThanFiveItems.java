@@ -10,12 +10,13 @@ public class DiscountToBudgetWithMoreThanFiveItems extends Discount {
         super(next);
     }
 
-    public BigDecimal calculate(final Budget budget) {
-        if (budget.getNumberOfItems() > 5) {
-            return budget.getValue().multiply(BigDecimal.valueOf(0.1));
-        }
+    public BigDecimal doesCalculation(final Budget budget) {
+        return budget.getValue().multiply(BigDecimal.valueOf(0.1));
+    }
 
-        return getNext().calculate(budget);
+    @Override
+    public boolean shouldCalculate(Budget budget) {
+        return budget.getNumberOfItems() > 5;
     }
 
 }

@@ -11,11 +11,11 @@ import java.math.BigDecimal;
 public class DiscountCalculator {
 
     public BigDecimal calculate(Budget budget) {
-        Discount discount = new DiscountToBudgetWithMoreThanFiveItems(
+        Discount chainOfDiscounts = new DiscountToBudgetWithMoreThanFiveItems(
                                     new DiscountToBudgetWithValueBiggerThanFiveHundred(
                                             new NoDiscount()));
 
-        return discount.calculate(budget);
+        return chainOfDiscounts.calculate(budget);
     }
 
 }
